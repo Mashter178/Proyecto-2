@@ -1,0 +1,552 @@
+/* ============================================================
+   ESTILOS PARA EL TRADUCTOR JAVA → PYTHON
+   Interfaz moderna y responsiva
+   ============================================================ */
+
+:root {
+  --primary: #667eea;
+  --primary-dark: #5568d3;
+  --secondary: #764ba2;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  --dark: #1e293b;
+  --dark-light: #334155;
+  --light: #f8fafc;
+  --gray: #64748b;
+  --border: #e2e8f0;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 30px 0;
+  box-shadow: var(--shadow-lg);
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  font-size: 2.5em;
+  color: var(--primary);
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.header p {
+  text-align: center;
+  color: var(--gray);
+  font-size: 1.1em;
+}
+
+/* ============================================================
+   PANEL DE CONTROL
+   ============================================================ */
+.control-panel {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: var(--shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: white;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-secondary {
+  background: var(--gray);
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: var(--dark-light);
+}
+
+.select-ejemplos {
+  padding: 12px 20px;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+  background: white;
+  transition: border-color 0.3s;
+}
+
+.select-ejemplos:hover {
+  border-color: var(--primary);
+}
+
+/* Estadísticas */
+.estadisticas {
+  display: flex;
+  gap: 30px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-label {
+  font-size: 0.9em;
+  color: var(--gray);
+  margin-bottom: 5px;
+}
+
+.stat-value {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+/* ============================================================
+   EDITORES
+   ============================================================ */
+.editor-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.editor-panel {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.panel-header {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.panel-header h2,
+.panel-header h3 {
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.panel-badge {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85em;
+}
+
+.code-editor {
+  width: 100%;
+  min-height: 400px;
+  padding: 20px;
+  border: none;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  resize: vertical;
+  background: #f8fafc;
+  color: var(--dark);
+}
+
+.code-editor:focus {
+  outline: none;
+  background: white;
+}
+
+/* ============================================================
+   PESTAÑAS
+   ============================================================ */
+.tabs-container {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  margin-bottom: 30px;
+}
+
+.tabs {
+  display: flex;
+  background: var(--light);
+  border-bottom: 2px solid var(--border);
+}
+
+.tab {
+  flex: 1;
+  padding: 15px 20px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 600;
+  color: var(--gray);
+  transition: all 0.3s;
+  border-bottom: 3px solid transparent;
+}
+
+.tab:hover {
+  background: white;
+  color: var(--primary);
+}
+
+.tab.active {
+  background: white;
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+.tab-content {
+  display: none;
+  padding: 30px;
+  min-height: 400px;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.empty-message {
+  text-align: center;
+  color: var(--gray);
+  font-size: 1.1em;
+  padding: 40px;
+}
+
+/* ============================================================
+   TOKENS
+   ============================================================ */
+.tokens-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.token-card {
+  background: var(--light);
+  border-left: 4px solid var(--primary);
+  padding: 15px;
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+
+.token-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.token-tipo {
+  font-weight: bold;
+  color: var(--primary);
+  font-size: 0.9em;
+  margin-bottom: 5px;
+}
+
+.token-valor {
+  font-family: 'Courier New', monospace;
+  background: white;
+  padding: 8px;
+  border-radius: 4px;
+  margin: 8px 0;
+  word-break: break-all;
+}
+
+.token-posicion {
+  font-size: 0.85em;
+  color: var(--gray);
+}
+
+/* ============================================================
+   AST VIEWER
+   ============================================================ */
+.ast-viewer {
+  font-family: 'Courier New', monospace;
+  background: var(--dark);
+  color: #10b981;
+  padding: 20px;
+  border-radius: 8px;
+  overflow-x: auto;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.ast-node {
+  margin-left: 20px;
+  border-left: 2px solid var(--gray);
+  padding-left: 15px;
+  margin-top: 10px;
+}
+
+.ast-key {
+  color: #60a5fa;
+  font-weight: bold;
+}
+
+.ast-value {
+  color: #fbbf24;
+}
+
+.ast-string {
+  color: #10b981;
+}
+
+/* ============================================================
+   ERRORES
+   ============================================================ */
+.errores-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.error-card {
+  background: #fef2f2;
+  border-left: 4px solid var(--error);
+  padding: 15px 20px;
+  border-radius: 8px;
+}
+
+.error-card.warning {
+  background: #fffbeb;
+  border-left-color: var(--warning);
+}
+
+.error-card.lexico {
+  border-left-color: #ef4444;
+}
+
+.error-card.sintactico {
+  border-left-color: #f59e0b;
+}
+
+.error-card.validacion {
+  border-left-color: #3b82f6;
+}
+
+.error-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.error-tipo {
+  font-weight: bold;
+  font-size: 0.9em;
+  text-transform: uppercase;
+}
+
+.error-posicion {
+  font-size: 0.85em;
+  color: var(--gray);
+}
+
+.error-mensaje {
+  color: var(--dark);
+  font-size: 1em;
+}
+
+/* ============================================================
+   FASES
+   ============================================================ */
+.fases-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.fase-item {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  background: var(--light);
+  border-radius: 12px;
+  border-left: 5px solid var(--gray);
+  transition: all 0.3s;
+}
+
+.fase-item.completada {
+  border-left-color: var(--success);
+  background: #f0fdf4;
+}
+
+.fase-item.error {
+  border-left-color: var(--error);
+  background: #fef2f2;
+}
+
+.fase-icon {
+  font-size: 2.5em;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 50%;
+}
+
+.fase-content {
+  flex: 1;
+}
+
+.fase-content h4 {
+  color: var(--dark);
+  margin-bottom: 5px;
+}
+
+.fase-content p {
+  color: var(--gray);
+  font-size: 0.95em;
+  margin-bottom: 10px;
+}
+
+.fase-status {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.9em;
+  font-weight: 600;
+  background: var(--gray);
+  color: white;
+}
+
+.fase-status.completado {
+  background: var(--success);
+}
+
+.fase-status.error {
+  background: var(--error);
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
+  background: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  padding: 20px;
+  margin-top: 30px;
+  color: var(--gray);
+}
+
+/* ============================================================
+   LOADING
+   ============================================================ */
+.loading-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.loading-overlay.active {
+  display: flex;
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 5px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loading-overlay p {
+  color: white;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 968px) {
+  .editor-container {
+    grid-template-columns: 1fr;
+  }
+
+  .estadisticas {
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .control-panel {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .tabs {
+    overflow-x: auto;
+  }
+}

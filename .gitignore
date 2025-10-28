@@ -1,0 +1,42 @@
+# ============================================================
+# GITIGNORE para Traductor Java → Python
+# ============================================================
+
+# Dependencias de Node.js
+node_modules/
+package-lock.json
+
+# Archivos generados automáticamente
+src/output/
+*.py
+*.html
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Archivos temporales del sistema operativo
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# VS Code (opcional - comenta si quieres sincronizar)
+.vscode/
+*.code-workspace
+
+# Archivos de entorno
+.env
+.env.local
+
+# Archivos de prueba temporales
+test-*.java
+temp/
+tmp/
+
+# Cache
+.cache/
+.npm/
